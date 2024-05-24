@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing Page</title>
+  <title>Landing Page com Login</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
@@ -15,16 +15,22 @@
       background-color: #000;
     }
     .navbar-brand img {
-      height: 80px;
+      height: 40px;
     }
     .main-content {
       flex: 1;
-    }
-    .full-screen-image {
-      width: 100%;
-      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url('sua-imagem.jpg');
       background-size: cover;
       background-position: center;
+    }
+    .login-form {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
     footer {
       background-color: #000;
@@ -35,47 +41,54 @@
   </style>
 </head>
 <body>
-  <!-- Nav Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="img/WhatsApp Image 2024-05-22 at 15.59.58.jpeg" alt="Logo">
-        <span class="ml-2">INVESTIFY</span>
-      </a>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ml-auto">
-        <!--  <li class="nav-item">
-            <a class="btn btn-dark nav-link" href="cadastro.html" role="button">Faça seu Login</a>
-          </li> -->
-        </ul>
+
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="login-form">
+      <h2>Cadastro Investify</h2>
+      <form>
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input type="Nome" class="form-control" id="Nome" placeholder="Digite seu Nome">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Digite seu email">
+        </div>
+        <div class="form-group">
+          <label for="Telefone">TELEFONE</label>
+          <input type="number" class="form-control" id="telefone" placeholder="Digite seu telefone">
+        </div>
+        <div class="form-group">
+          <label for="senha">SENHA</label>
+          <input type="password" class="form-control" id="senha" placeholder="Digite sua senha">
+        </div>
+        <div class="form-group">
+          <label for="number">CPF</label>
+          <input type="text" class="form-control" id="cpf" placeholder="Digite seu cpf">
+        </div>
+        <div class="form-group">
+          <label for="genero">genero</label>
+          <br>
+          <input type="radio" name="genero" value="1">Masculino
+          <br>
+          <input type="radio" name="genero" value="2">Feminino
+        </div>
+        <div class="form-group">
+          <label for="cargo">cargo</label>
+          <br>
+          <input type="radio" name="cargo" value="1">Assessoria
+          <br>
+          <input type="radio" name="cargo" value="2">Usuario
+        </div>
+        <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+          
       </div>
+      </form>
     </div>
-  </nav>
-<!--CRIE AQUI O FORM-->
-<div class="main-content">
-  <div class="login-form">
-    <h2>Login</h2>
-    <form>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="Digite seu email">
-      </div>
-      <div class="form-group">
-        <label for="password">Senha</label>
-        <input type="password" class="form-control" id="password" placeholder="Digite sua senha">
-      </div>
-      <button type="submit" class="btn btn-primary btn-block">Login</button>
-    </form>
-  </div>
-</div>
-.
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>Informações de Contato: investify@email.com | Telefone: (11) 01234-5678</p>
-      <p>&copy; 2024 INVESTIFY. Todos os direitos reservados.</p>
-    </div>
-  </footer>
+  </div> 
+ 
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
