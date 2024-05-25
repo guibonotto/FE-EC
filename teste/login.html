@@ -5,41 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Landing Page com Login</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      background-color: fff;
-    }
-    .navbar {
-      background-color: #000;
-    }
-    .navbar-brand img {
-      height: 40px;
-    }
-    .main-content {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-image: url('sua-imagem.jpg');
-      background-size: cover;
-      background-position: center;
-    }
-    .login-form {
-      background: rgba(255, 255, 255, 0.8);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    footer {
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-      padding: 10px 0;
-    }
-  </style>
+  <link rel="stylesheet" href="css/cadastro.css">
 </head>
 <body>
   <!-- Main Content -->
@@ -49,11 +15,11 @@
       <form>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" class="form-control" id="email" placeholder="Digite seu email">
+          <input type="email" class="form-control" id="email" placeholder="Digite seu email" name="nome">
         </div>
         <div class="form-group">
           <label for="password">Senha</label>
-          <input type="password" class="form-control" id="password" placeholder="Digite sua senha">
+          <input type="password" class="form-control" id="password" placeholder="Digite sua senha" name="senha">
         </div>
         <button type="submit" class="btn btn-primary btn-block">Login</button>
       </form>

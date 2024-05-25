@@ -5,91 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Landing Page com Login</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    .navbar {
-      background-color: #000;
-    }
-    .navbar-brand img {
-      height: 40px;
-    }
-    .main-content {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-image: url('sua-imagem.jpg');
-      background-size: cover;
-      background-position: center;
-    }
-    .login-form {
-      background: rgba(255, 255, 255, 0.8);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    footer {
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-      padding: 10px 0;
-    }
-  </style>
+  <link rel="stylesheet" href="css/cadastro.css">
+
 </head>
 <body>
-
-
   <!-- Main Content -->
-  <div class="main-content">
+  <div class="main-content ">
     <div class="login-form">
       <h2>Cadastro Investify</h2>
-      <form>
-        <div class="form-group">
+      <form class="row mb-3 needs-validation" novalidate>
+        <div class="form-group col-md-6">
           <label for="name">Nome</label>
-          <input type="Nome" class="form-control" id="Nome" placeholder="Digite seu Nome">
+          <input type="Nome" class="form-control" id="Nome" placeholder="Digite seu Nome" name="nome">
         </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" class="form-control" id="email" placeholder="Digite seu email">
+        <div class="form-group col-md-6">
+          <label for="email ">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Digite seu email" name="email">
         </div>
-        <div class="form-group">
-          <label for="Telefone">TELEFONE</label>
-          <input type="number" class="form-control" id="telefone" placeholder="Digite seu telefone">
+        <div class="form-group col-md-6">
+          <label for="Telefone">Telefone</label>
+          <input type="number" class="form-control" id="telefone" placeholder="Digite seu telefone" name="telefone">
         </div>
-        <div class="form-group">
-          <label for="senha">SENHA</label>
-          <input type="password" class="form-control" id="senha" placeholder="Digite sua senha">
+        <div class="form-group col-md-6">
+          <label for="senha">Senha</label>
+          <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" name="senha">
         </div>
-        <div class="form-group">
-          <label for="number">CPF</label>
-          <input type="text" class="form-control" id="cpf" placeholder="Digite seu cpf">
+        <div class="form-group col-md-4">
+          <label for="number">Cpf</label>
+          <input type="text" class="form-control" id="cpf" placeholder="Digite seu cpf" name="cpf">
         </div>
-        <div class="form-group">
-          <label for="genero">genero</label>
+        <div class="form-group col-md-3">
+          <label for="genero">Gênero</label>
           <br>
-          <input type="radio" name="genero" value="1">Masculino
+          <input type="radio" name="genero" value="1" >Masculino
           <br>
-          <input type="radio" name="genero" value="2">Feminino
+          <input type="radio" name="genero" value="2" >Feminino
         </div>
-        <div class="form-group">
-          <label for="cargo">cargo</label>
+        <div class="form-group col-md-4">
+          <label for="cargo">Cargo</label>
           <br>
           <input type="radio" name="cargo" value="1">Assessoria
           <br>
-          <input type="radio" name="cargo" value="2">Usuario
+          <input type="radio" name="cargo" value="2">Empreendedor ou Investidor
         </div>
-        <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
-        <div class="form-group">
+        <button class="btn btn-primary w-100 py-2" type="submit" >Sign in</button>
+        <div class="form-group col-md-4">
           <a href="login.html" text-align="center">Já possuo uma conta</a>
         </div>
 
           
       </div>
-      </form>
+      </form> 
     </div>
   </div> 
  
