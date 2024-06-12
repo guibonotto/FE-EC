@@ -10,73 +10,108 @@
 </head>
 <body>
   <!-- Main Content -->
-  <div class="main-content ">
+  <div class="main-content">
     <div class="login-form">
-      <h2>Cadastro Investify</h2>
-      <form class="row mb-3 needs-validation" novalidate>
-        <div class="form-group col-md-6">
-          <label for="name">Nome</label>
-          <input type="Nome" class="form-control" id="Nome" placeholder="Digite seu Nome" name="nome" required>
-        </div>
-        <div class="form-group col-md-6">
-          <label for="email ">Email</label>
-          <input type="email" class="form-control" id="email" placeholder="Digite seu email" name="email" required>
-        </div>
-        <div class="form-group col-md-6">
-          <label for="Telefone">Telefone</label>
-          <input type="number" class="form-control" id="telefone" placeholder="Digite seu telefone" name="telefone" required>
-        </div>
-        <div class="form-group col-md-6">
-          <label for="senha">Senha</label>
-          <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" name="senha" required>
-        </div>
-        <div class="form-group col-md-4">
-          <label for="number">Cpf</label>
-          <input type="text" class="form-control" id="cpf" placeholder="Digite seu CPF" name="cpf"
-          pattern="\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}" title="Digite um CPF no formato: xxx.xxx.xxx-xx" required>
-        </div>
-        <div class="form-group col-md-3">
-          <label for="genero">Gênero</label>
-          <br>
-          <input type="radio" name="genero" value="1" >Masculino
-          <br>
-          <input type="radio" name="genero" value="2" >Feminino
-        </div>
-        <div class="form-group col-md-4">
-          <label for="cargo">Cargo</label>
-          <br>
-          <input type="radio" name="cargo" value="1">Assessoria
-          <br>
-          <input type="radio" name="cargo" value="2">Empreendedor ou Investidor
-        </div>
-        <button class="btn btn-primary w-100 py-2" type="submit" >Sign in</button>
-        <div class="form-group col-md-4">
-          <a href="login.html" text-align="center">Já possuo uma conta</a>
-        </div>
-
-
-      </div>
-      </form> 
+        <h2>Cadastro Investify</h2>
+        <form class="row mb-3 needs-validation" action="{{route('user.store')}}" method="POST" novalidate>
+      
+            <div class="form-group col-md-4">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" id="Nome" placeholder="Digite seu Nome" name="nome" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="sobrenome">Sobrenome</label>
+                <input type="text" class="form-control" id="Sobrenome" placeholder="Digite seu Sobrenome" name="sobrenome" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Digite seu email" name="email" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="telefone">Telefone</label>
+                <input type="number" class="form-control" id="telefone" placeholder="Digite seu telefone" name="telefone" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="senha">Senha</label>
+                <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" name="senha" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="confirmarSenha">Confirmar Senha</label>
+                <input type="password" class="form-control" id="confirmarSenha" placeholder="Confirme sua senha" name="confirmarSenha" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="cpf">Cpf</label>
+                <input type="text" class="form-control" id="cpf" placeholder="Digite seu CPF" name="cpf" title="Digite um CPF no formato: xxx.xxx.xxx-xx" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="nascimento">Data de nascimento</label>
+                <input type="date" class="form-control" id="nascimento" name="nascimento" required>
+            </div>
+            <div class="form-group col-md-3" aria-required="true">
+                <label for="genero">Gênero</label>
+                <br>
+                <input type="radio" name="genero" value="1"> Masculino
+                <br>
+                <input type="radio" name="genero" value="2"> Feminino
+                <br>
+                <input type="radio" name="genero" value="3"> Outros
+            </div>
+            <div class="form-group col-md-12">
+                <button class="btn btn-primary w-100 py-2" type="submit">Registrar</button>
+            </div>
+        </form>
     </div>
-  </div> 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            var forms = document.getElementsByClassName('needs-validation');
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    var senha = document.getElementById('senha').value;
+                    var confirmarSenha = document.getElementById('confirmarSenha').value;
+                    var nascimento = document.getElementById('nascimento').value;
 
-  <script>
-    // Função para validar o formulário
-    function validateForm(event) {
-      const form = event.target;
-      if (!form.checkValidity()) {
-        event.preventDefault(); // Impede o envio do formulário se houver erros
-        event.stopPropagation();
-      }
-      form.classList.add('was-validated'); // Adiciona a classe para estilizar campos inválidos
-    }
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
 
-    // Adicione um ouvinte de evento ao formulário
-    const formElement = document.querySelector('.needs-validation');
-    formElement.addEventListener('submit', validateForm);
-  </script>
+                    if (senha !== confirmarSenha) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        alert("As senhas não coincidem!");
+                    }
+
+                    var today = new Date();
+                    var birthDate = new Date(nascimento);
+                    var age = today.getFullYear() - birthDate.getFullYear();
+                    var monthDifference = today.getMonth() - birthDate.getMonth();
+
+                    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+                        age--;
+                    }
+
+                    if (age < 18) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        alert("Você precisa ter pelo menos 18 anos para se cadastrar!");
+                    }
+
+                    form.classList.add('was-validated');
+                }, false);
+            });
+
+            // Impedir a seleção de datas futuras no campo de data de nascimento
+            var nascimentoField = document.getElementById('nascimento');
+            var today = new Date().toISOString().split('T')[0];
+            nascimentoField.setAttribute('max', today);
+        }, false);
+    })();
+</script>
 </body>
 </html>
