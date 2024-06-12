@@ -30,5 +30,36 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Função para validar o formulário
+    function validateForm(event) {
+      const form = event.target;
+      if (!form.checkValidity()) {
+        event.preventDefault(); // Impede o envio do formulário se houver erros
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated'); // Adiciona a classe para estilizar campos inválidos
+    }
+
+    // Adicione um ouvinte de evento ao formulário
+    const formElement = document.querySelector('.needs-validation');
+    formElement.addEventListener('submit', validateForm);
+  </script>
+  <script>
+    function validatePassword(event) {
+      const password = event.target.value;
+      const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{7,}$/;
+
+      if (!regex.test(password)) {
+        event.target.setCustomValidity('A senha deve ter pelo menos 7 caracteres, incluindo 2 números e 1 caractere especial.');
+      } else {
+        event.target.setCustomValidity('');
+      }
+    }
+
+    const passwordInput = document.getElementById('password');
+    passwordInput.addEventListener('input', validatePassword);
+  </script>
+
 </body>
 </html>

@@ -16,23 +16,24 @@
       <form class="row mb-3 needs-validation" novalidate>
         <div class="form-group col-md-6">
           <label for="name">Nome</label>
-          <input type="Nome" class="form-control" id="Nome" placeholder="Digite seu Nome" name="nome">
+          <input type="Nome" class="form-control" id="Nome" placeholder="Digite seu Nome" name="nome" required>
         </div>
         <div class="form-group col-md-6">
           <label for="email ">Email</label>
-          <input type="email" class="form-control" id="email" placeholder="Digite seu email" name="email">
+          <input type="email" class="form-control" id="email" placeholder="Digite seu email" name="email" required>
         </div>
         <div class="form-group col-md-6">
           <label for="Telefone">Telefone</label>
-          <input type="number" class="form-control" id="telefone" placeholder="Digite seu telefone" name="telefone">
+          <input type="number" class="form-control" id="telefone" placeholder="Digite seu telefone" name="telefone" required>
         </div>
         <div class="form-group col-md-6">
           <label for="senha">Senha</label>
-          <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" name="senha">
+          <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" name="senha" required>
         </div>
         <div class="form-group col-md-4">
           <label for="number">Cpf</label>
-          <input type="text" class="form-control" id="cpf" placeholder="Digite seu cpf" name="cpf">
+          <input type="text" class="form-control" id="cpf" placeholder="Digite seu CPF" name="cpf"
+          pattern="\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}" title="Digite um CPF no formato: xxx.xxx.xxx-xx" required>
         </div>
         <div class="form-group col-md-3">
           <label for="genero">Gênero</label>
@@ -53,15 +54,29 @@
           <a href="login.html" text-align="center">Já possuo uma conta</a>
         </div>
 
-          
+
       </div>
       </form> 
     </div>
   </div> 
- 
-
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    // Função para validar o formulário
+    function validateForm(event) {
+      const form = event.target;
+      if (!form.checkValidity()) {
+        event.preventDefault(); // Impede o envio do formulário se houver erros
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated'); // Adiciona a classe para estilizar campos inválidos
+    }
+
+    // Adicione um ouvinte de evento ao formulário
+    const formElement = document.querySelector('.needs-validation');
+    formElement.addEventListener('submit', validateForm);
+  </script>
 </body>
 </html>
