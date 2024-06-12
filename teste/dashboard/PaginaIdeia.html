@@ -8,10 +8,15 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
     <title>Dashboard Template · Bootstrap v5.3</title>
+
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
+
+    <link rel="stylesheet" href="../css/paginaideia.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
 <link href="../css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="../css/meuportfolio.css">
+
 <link rel="stylesheet" href="../css/userViews.css">
     
     <!-- Custom styles for this template -->
@@ -157,7 +162,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2 active" href="userMinhasIdeias.html">
+              <a class="nav-link d-flex align-items-center gap-2" href="userMinhasIdeias.html">
                 MINHAS IDÉIAS
               </a>
             </li>
@@ -169,7 +174,7 @@
           </ul>
           <ul class="nav flex-column mb-auto">
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="userFeedback.html">
+              <a class="nav-link d-flex align-items-center gap-2 " href="PaginaIdeia.html">
                 FEEDBACK DE IDÉIAS
               </a>
             </li>
@@ -209,73 +214,36 @@
       </div>
     </div>
 
-    <div class="container" id="divisao">
+    <div class="container" id="ideia">
       <div class="tabs">
           <div class="tab-header">
-              <h2 class="tab-link active" onclick="openTab('ideias')">minhas ideias</h2>
-              <span class="redirect-icon" onclick="redirectToUrl()">+</span>
+            <h2>#Título</h2>
           </div>
           <div class="tab-content" id="ideias">
-              <h2>Minhas Ideias</h2>
-              <div class="row row-cols-1 row-cols-md-2 g-4">
-                <table class="table caption-top">
-                  <thead>
-                    <tr>
-                      <!--pegar valores do back S2-->
-                      <th scope="col">#</th>
-                      <th scope="col">Nome da Empresa</th>
-                      <th scope="col">Tipo</th>
-                      <th scope="col">Risco</th>
-                      <th scope="col">Fase</th>
-                      <th scope="col">Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>bemFeliz</td>
-                      <td>Construcao</td>
-                      <td>Medio</td>
-                      <td>Execucao</td>
-                      <td>Ativo</td>
-                    </tr>
-                  </tbody>
-                </table>
-                </div>
+              <div class="card">
+               <h2>Sobre Nós</h2>
+               <p>texto cadastrado no sobre nós da ideia</p>
+              </div>
           </div>
-          <div class="tab-content" id="investimentos">
-              <h2>Investimentos</h2>
-              <div class="row row-cols-1 row-cols-md-2 g-4">
-                <table class="table caption-top">
-                  <thead>
-                    <tr>
-                      <!--pegar valores do back S2-->
-                      <th scope="col">ID Ideia</th>
-                <th scope="col">Valor Investido</th>
-                <th scope="col">Data de Início</th>
-                <th scope="col">Participação (%)</th>
-                <th scope="col">Receita</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                <th scope="row">1</th>
-                <th>50000.00</th>
-                <th>2024-01-15 10:00:00</th>
-                <th>25</th>
-                <th>120000.00</th>
-                    </tr>
-                  </tbody>
-                </table>
-                </div>
+          <div class="tab-content" id="investimentos" style="display:none;">
+              <div class="card">
+              </div>
           </div>
       </div>
       <div class="footer">
-        <h2 class="tab-link" onclick="openTab('investimentos')">investimentos</h2>
-    </div>
-</div>
-      <script src="../js/criarideia.js"></script>
-        <script src="../js/bootstrap.bundle.min.js"></script>
+        <div class="dropdown">
+          <button class="dropbtn">Fazer Proposta</button>
+          <div class="dropdown-content">
+            <input type="number" id="valorInvestido" placeholder="Valor Investido">
+            <input type="date" id="dataInicio" placeholder="Data de Início">
+            <input type="number" id="participacao" placeholder="Participação (%)">
+          </div>
+      </div>
+  </div>
+  <script src="../js/paginaideia.js"></script>
+  <script src="../js/pideiadropdown.js"></script>
+            
+<script src="../js/bootstrap.bundle.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js" integrity="sha384-eI7PSr3L1XLISH8JdDII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp" crossorigin="anonymous"></script><script src="../js/dashboard.js"></script></body>
 </html>
