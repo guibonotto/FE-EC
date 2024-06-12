@@ -22,7 +22,6 @@ color: rgb(9, 19, 29)(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
     align-items: center;
     justify-content: center;
     background-image: url('sua-imagem.jpg');
-    background-size: cover;
     background-position: center;
   }
 .login-form {

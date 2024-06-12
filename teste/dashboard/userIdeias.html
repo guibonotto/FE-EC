@@ -14,7 +14,7 @@
     
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-
+    <link href="../css/ideia.css" rel="stylesheet">
 <link href="../css/bootstrap.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="../css/userViews.css">
@@ -214,48 +214,37 @@
       </div>
     </div>
 
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <div class="content">
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <a class="card-title text-decoration-none" href="userPerfil">IDEIA #1</a>
-                  <p class="card-text">Descrição colocada sobre a Idéia</p>
-    <a href="#" class="btn btn-secondary">CONHECER IDEIA</a>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <a class="card-title text-decoration-none" href="userIdeias">IDEIA #2</a>
-                  <p class="card-text">Descrição colocada sobre a Idéia</p>
-                  <a href="#" class="btn btn-secondary">CONHECER IDEIA</a>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <a class="card-title text-decoration-none" href="userCarteira">IDEIA #3</a>
-                  <p class="card-text">Descrição colocada sobre a Idéia</p>
-                  <a href="#" class="btn btn-secondary">CONHECER IDEIA</a>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <a class="card-title text-decoration-none" href="userPropostas">IDEIA #4</a>
-                  <p class="card-text">Descrição colocada sobre a Idéia</p>
-                  <a href="#" class="btn btn-secondary">CONHECER IDEIA</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </main>
+    <div class="container" id="ideias">
+      <h2>Buscar Ideias</h2>
+      <input type="text" id="searchInput" placeholder="Pesquisar ideias..." onkeyup="searchIdeas()">
+
+      <table id="ideasTable">
+          <thead>
+              <tr>
+                  <th>Título</th>
+                  <th>Informações</th>
+                  <th>Ações</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>Título 1</td>
+                  <td>Informações sobre o investimento 1</td>
+                  <td>
+              
+                      <button class="view-more-btn" onclick="viewMore('pagina')">Ver Mais</button>
+                  </td>
+              </tr>
+              <tr>
+                  <td>Título 2</td>
+                  <td>Informações sobre o investimento 2</td>
+                  <td>
+                      <button class="view-more-btn" onclick="viewMore('#pagina')">Ver Mais</button>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
         <script src="../js/bootstrap.bundle.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js" integrity="sha384-eI7PSr3L1XLISH8JdDII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp" crossorigin="anonymous"></script><script src="../js/dashboard.js"></script></body>
